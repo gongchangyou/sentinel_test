@@ -1,5 +1,6 @@
 package com.mouse.sentinel_test;
 
+import com.alibaba.csp.sentinel.annotation.aspectj.SentinelResourceAspect;
 import com.alibaba.csp.sentinel.slots.block.RuleConstant;
 import com.alibaba.csp.sentinel.slots.block.flow.FlowRule;
 import com.alibaba.csp.sentinel.slots.block.flow.FlowRuleManager;
@@ -12,6 +13,10 @@ import java.util.List;
 
 @SpringBootApplication
 public class SentinelTestApplication {
+    @Bean
+    public SentinelResourceAspect sentinelResourceAspect() {
+        return new SentinelResourceAspect();
+    }
 
     public static void main(String[] args) {
         List<FlowRule> rules = new ArrayList<>();

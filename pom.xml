@@ -17,6 +17,12 @@
         <java.version>11</java.version>
     </properties>
     <dependencies>
+        <!--    如果要使用@SentinelResource必须添加此依赖    -->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-annotation-aspectj</artifactId>
+            <version>1.8.1</version>
+        </dependency>
         <!-- replace here with the latest version -->
         <dependency>
             <groupId>com.alibaba.csp</groupId>

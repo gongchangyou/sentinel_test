@@ -19,7 +19,17 @@ import java.util.Optional;
 @RequestMapping(value = "/pay")
 public class PayController {
 
-//    @SentinelResource(value = "HelloWorld",blockHandler = "block", defaultFallback= "default fallback")
+    @SentinelResource(value = "HelloWorld",blockHandler = "block", defaultFallback= "default fallback")
+    @GetMapping(value = "/helloworld/annotation")
+    public String annotation(
+            @RequestParam(name = "a", required = false) Integer a,
+            @RequestParam(name = "b", required = false) Integer b
+    ){
+        log.info("a+b");
+
+        return a+b + "result";
+    }
+
     @GetMapping(value = "/helloworld")
     public String pay(
             @RequestParam(name = "a", required = false) Integer a,
